@@ -19,15 +19,37 @@ Venmo.prototype.getCurrentUser = function(){
             if (err){
                 return err;
             } else{
-                console.log(res);
                 return res;
             }
         });
 };
 
-Venmo.prototype.getUserById = function(){};
+Venmo.prototype.getUserById = function(user_id){
+    return request
+        .get(base_url + '/users/' + user_id)
+        .query({access_token : this.client_id})
+        .end(function(err, res){
+            if (err){
+                return err;
+            } else{
+                return res;
+            }
+        });
+};
 
-Venmo.prototype.getUserFriends = function(){};
+Venmo.prototype.getUserFriends = function(user_id, limit){
+    return request
+        .get(base_url + '/users/' + user_id + '/friends')
+        .query({access_token : this.client_id})
+        .query({limit : limit})
+        .end(function(err, res){
+            if (err){
+                return err;
+            } else{
+                return res;
+            }
+        });    
+};
 
 Venmo.prototype.sendPayment = function(){};
 
