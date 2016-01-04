@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aneesh Vaidya",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "superagent": "^1.6.1"
+  }
 }
