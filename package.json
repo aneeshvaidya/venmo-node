@@ -1,0 +1,11 @@
+{
+  "name": "venmo-node",
+  "version": "0.0.1",
+  "description": "Venmo API for node.js",
+  "main": "venmo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aneesh Vaidya",
+  "license": "MIT"
+}
