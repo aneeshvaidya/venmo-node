@@ -11,7 +11,19 @@ function Venmo(client_id){
     this.client_id = client_id;
 }
 
-Venmo.prototype.getCurrentUser = function(){};
+Venmo.prototype.getCurrentUser = function(){
+    return request
+        .get(base_url + '/me')
+        .query({access_token : this.client_id})
+        .end(function(err, res){
+            if (err){
+                return err;
+            } else{
+                console.log(res);
+                return res;
+            }
+        });
+};
 
 Venmo.prototype.getUserById = function(){};
 
@@ -27,4 +39,4 @@ Venmo.prototype.getPaymentById = function(){};
 
 Venmo.prototype.acceptCharge = function(){};
 
-
+module.exports = Venmo;
