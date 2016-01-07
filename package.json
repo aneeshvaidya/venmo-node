@@ -4,9 +4,13 @@
   "description": "Venmo API for node.js",
   "main": "venmo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha" 
   },
-  "author": "Aneesh Vaidya",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aneeshvaidya/venmo-node.git"
+  },
+  "author": "Aneesh Vaidya <aneesh.h.vaidya@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "mocha": "^2.3.4",
