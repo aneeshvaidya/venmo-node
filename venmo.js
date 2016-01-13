@@ -7,6 +7,8 @@
 var request = require('superagent');
 var base_url = 'https://api.venmo.com/v1';
 
+module.exports = Venmo;
+
 function Venmo(client_id){
     this.client_id = client_id;
 }
@@ -51,6 +53,7 @@ Venmo.prototype.acceptCharge = function(payment_id, params, callback){
 };
 
 Venmo.prototype.createCharge = function(params, callback){
+    params.amount = -1 * params.amount;
     return this.sendPayment(params, callback);
 };
 
@@ -63,7 +66,7 @@ Venmo.prototype.getRecentPayments = function(params, callback){
 };
 
 Venmo.prototype.getPaymentById = function(payment_id, params, callback){
-    params.access_toekn = this.client_id;
+    params.access_token = this.client_id;
     return request
         .get(base_url + '/payments/' + payment_id)
         .query(params)
@@ -71,4 +74,3 @@ Venmo.prototype.getPaymentById = function(payment_id, params, callback){
 };
 
 
-module.exports = Venmo;
