@@ -1,10 +1,10 @@
 {
   "name": "venmo-node",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Venmo API for node.js",
   "main": "venmo.js",
   "scripts": {
-    "test": "mocha" 
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
